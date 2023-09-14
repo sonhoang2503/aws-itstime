@@ -1,0 +1,40 @@
+1) General
+- Provide access to virtual machine/os/runtime env.
+- Default requirement for any compute in AWS.
+
+2) Features
+- IAAS - Provide virtual machines => Instances of EC2
+- Private - by default uses VPC networking. (configured to launch into a single VPC subnet , need to configure public access)
+- AZ Resilient - Instances fails if AZ fails (Launch into VPC subnet/ => in a single AZ)
+- Different instance sizes and capabilities
+- On Demand billing - Pay what you consume (per second/minutes)
+- Local on-host storage / Elastic Block Store(EBS -network storage availble for the instances)
+
+3) Instance Lifecycle
+- Running - After provisioning => Running => Can either switch between running and stopped
+- Stopped - Just like shutdown => Can either switch between running and stopped
+- Terminated => Removed (Cannot reversible)
+
+=> Its important cus the charge for the instance (cpu, disk,network,memory,..)
+
+- Running = charge all()
+- Stopped = no cpu/memory/network => but still storage(EBS)
+- Terminated = no charge
+
+4) Amazon Machine Image (AMI)
+=> Image of an EC2 instane 
+AMI => EC2 => AMI = can use to create EC2 instance or be created from EC2 instance
+
+
+// AMI 
+- contains attached Permissions (control which account can/cant use the AMI)
+=> Public - can be used by everyone
+=> Owner  - can be used implicit
+=> Explicit - can be used by specific accounts allowed
+
+- contains Root Volume(may also other extra)
+- contains Block Device Mapping
+
+5) Connecting to EC2
+
+

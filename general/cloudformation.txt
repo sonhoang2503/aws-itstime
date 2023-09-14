@@ -1,0 +1,14 @@
+1) General
+- CF is a tool to create/update/delete resources (automate infrastructure) using templates.
+
+2) Templates 
+    - Using yaml/json
+    - Some of the key in the yamlfile
+        - Resources: the only required key (of course)
+        - AwsTemplateFormatVersion (if have need to follow by Description)
+        - Description: description
+        - Metadata: Can control the ui represent the resources in the aws console
+        - Parameters: Add fields to prompt the user for more info
+        - Mappings: Create lookups table 
+        - Conditions: Set conditions for the template/
+        - Outputs: Once the templates finish => return the outputs .
