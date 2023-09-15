@@ -1,0 +1,15 @@
+1) General
+- IAM Groups are containers for Users
+- Have no credentials, cannot log in to Groups
+- Solely used to manage IAM Users
+
+2) Basis   
+    - Group allow effective administration style management of users.
+    - Can attach policies to group both inline or managed
+    - Cannot have nesting groups within groups
+    - Limit groups per account
+
+? Policy in a resource can reference IAM users and IAM role to give the access to but
+    => Group are not a true identity/ cant be reference as a principal in a policy
+
+! Group just to group IAM users and attach policies to group so the users inherit it.

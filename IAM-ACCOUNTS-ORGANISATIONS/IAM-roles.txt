@@ -1,0 +1,31 @@
+1)General
+- Role is an identity exists inside an AWS account
+- For general we use IAM User for an single Principal
+- But for IM Role we can use for multiple Principal as account/app/services
+
+2) Basis
+    - A role is represent level of access inside an AWS account.
+    - Can be used short times, just becoming the role, has all permissions that role has.(borrow the permission for a short period of time)
+
+3) User vs Role
+    - IAM User can have identity permission policies(inline/ attached managed policies)
+    - IAm Role have 2 types of policies
+        - Trust Policy : If identity is allow in Trust Policy => it will be allowed to assume the ROLE in Iam Role
+            - Trust Policy can reference identities in the same account/other roles/other AWS services/also other identities in other AWS accounts.
+            - If the identity grant its role => AWS will generates temporary security credentials( but the credentials is time limited)
+
+        - Permissions Policy : 
+            - After grant the credentials => these role will be able to access to the resources that is define in Permissions Policy.
+
+
+? When to use IAM roles
+    - If you dont know how much principals will need/ => means its can scale then you probably need to use role (5000limit user for account)
+    - Grant and Emergency Role for some emergency occasions
+    - Often want to used if you want to reuse your existing identities for use within AWS 
+    -
+    
+! Access AWS resources need AWS identity
+! 5000 limit user within account
+
+
+4) Across account access

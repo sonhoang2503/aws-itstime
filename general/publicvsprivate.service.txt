@@ -1,0 +1,13 @@
+// Network concern
+
++)
+Public ~~ Access from all network (via the internet)
+Private ~~ Access only from a vpc (virtual private cloud)
+
+
++) Network category zones
+- Public internet zone
+- AWS Public zone
+- AWS Private zone (vpc cannot comunicate without configure it)
+
+// REGIONS - EDGE LOCATION - AVAILABILITY ZONES 

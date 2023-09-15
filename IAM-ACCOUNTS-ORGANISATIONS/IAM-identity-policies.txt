@@ -1,0 +1,25 @@
+1) General
+- Set of staatements/policies grant access or denies access to aws resources.
+ 
+
+2) IAM POLICY DOCUMENT
+    - JSON document/ contains statements
+    - Statements 
+        - Sid: Not a require field (still be due to convention => description)\
+        - Effect: (Mostly allow/reject to the action to the resources)
+        - Action: List of action to that resources
+        - Resource: AWS resources
+
+3) Rule Priority(Top down order)
+    - Explicit DENY 
+    - Explicit ALLOW
+    - Implicit Default DENY
+
+4) Type of Policies
+    - Inline Policy: Policy attach to single identity 
+        - Not so good, recreate policy for every single identity => Should only for Special/Exceptional rights
+    - Manged Policy: An Object Policy then you can attach that Object to identity
+        - Better, reusable, low management overhead
+        - 2 types:
+            - Aws managed policies (might not fit exact need)
+            - Customer managed policies (custom to your own)

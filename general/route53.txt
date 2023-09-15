@@ -1,0 +1,18 @@
+1) General
+- AWS manage DNS service
+
+2) Basis
+    - Register domains
+    - Host Zones managed by nameservers
+    - Global service ~~ single database
+    - Globally resilient
+
+3) Register domains
+    - Zone: .com , .net, .io, .org,...
+
+4) Hosted Zones
+    - Zone files in AWS
+    - Hosted on four managed name servers
+    - Can be public/
+    - or Private linked to VPC(s)
+    

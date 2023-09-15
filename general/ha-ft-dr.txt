@@ -1,0 +1,20 @@
+1) High availability (HA)  = Minimise any outages
+-aims to ensure an agreed level of operational performance, usually uptime, for a higher than normal period
+(Maximum online time => keeping the system operational): eg(Think about the car with addtional tires)
+Easier => just need standby physical/virtual components.
+
+2) Fault Tolerance (FT) = Operate through faults
+
+-is the property that enables a system to continue operating properly in the event of the failure of some of
+  its components
+(Operate through failure without any disruption ) : eg(Think about the plane with additional engine/electricity system)
+
+Much like HA => end plus the system need to be designed to be working through failure without any disruption
+
+3)Disaster Recovery(DR) = Used when these dont work
+
+-set of policies,tools,procedures to enable the recovery or continuation of vital technology infrastructure and systems
+    following a natural or human-induced disaster
+
+(After the disaster process/ DR is desgined to keep the crucial and non replaceable part of your system safe)
+: eg (Think about pilot/passenger ejection system)

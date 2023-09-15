@@ -1,0 +1,20 @@
+// Introduction
+- Service you use to create private network inside AWS that other service will run from.
+- Also the services you used to connect AWS private network to your on-premise network.
+- Or also connect to other cloud platform.
+
+// General
+- A VPC = a virtual network inside AWS
+- A VPC is within 1 account and 1 region (1vpc cannot belonged to multiple regions)
+- Default is private and isolated from other vpcs/aws publiczone/internet
+- 2 types => default vpc and custom vpc
+- VPC CIDR (Every Vpc is allocated a range of IP address): start and end range of ip addressed that vpc can use. So anything want to 
+  comunicate with that vpc need to go through vpc cidr. 
+- VPC CIDR (default ip) : 172.31.0.0/16
+- As we know inside Regions will be AZs => Vpc achieve resilient by subdivided in to multiple subnets in each azs (once each az fail    )
+
+
+// Default VPC 
+- One per region- can be removed or recreated. 
+- Default VPC CIDR is always 172.31.0.0/16
+- /20 Subnet in each AZ in the region

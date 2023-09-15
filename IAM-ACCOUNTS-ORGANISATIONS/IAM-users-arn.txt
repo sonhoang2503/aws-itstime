@@ -1,0 +1,29 @@
+1) General
+-  I AM Users are indentity used for anything requiring long-term AWS access.
+-  An Identity trying to access AWS
+    - An person/app make request to IAM to interact with AWS resource
+- IAM is responsible for authenticate the identity before it have access the resource
+    - Username/password
+    - Access key
+- After authenticate the identity the AWS know which policies attach to that identity so i can grant access due to the policies
+
+
+2) ARN Amazon Resource Name
+- Uniquely identify resources within any AWS accounts
+- Used in IAM Policies attach to identity
+- Format:
+    - arn:partition:service:region:account-id:resource-id
+    - arn:partition:service:region:account-id:resource-type/resource-id
+    - arn:partition:service:region:account-id:resource-type:resource-id
+- Format difference: 
+    - arn:aws:s3:::catgif => The Bucket itself
+    - arn:aws:s3:::catgif/* => Objects in the bucket 
+    Object in the buckets and the bucket permissions are not the same thing.
+
+
+3) Rule
+    - 5000IAM Users per account
+    - IAM User can be a member of 10 groups
+    - This has systems design impacts
+    - Internet-scale applications
+    - Large orgs & org merges ??
