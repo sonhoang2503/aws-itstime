@@ -1,0 +1,26 @@
+1) General
+- Logs API calls/activities as CloudTrail Event (Action with service/resource its all log by cloudtrail)
+    - => Its all CloudTrail Event (activities by )
+- 90 days stored by default in Event History
+- Enable by default - no cost 90days
+- Customize the service/ create 1 or more Trails
+- Management Events and Data Events
+
+2) Cloudtrail Trails 
+- CLoudtrail is a service to enable operational/risk auditing,.. of your AWS account. Actions taken by
+user,role,services are records as events in cloudtrail.
+
+3) Ways to record events
+    - Eventhistory: default, store 90days 
+    - CloudTrailLake: havent check
+    - Trails: Store in s3buckets, can be delivered to AMZ cloudwatch (with these event to setup and monitoring
+    solutions), can setup trails for a single/multiple AWS accounts by using AWS organizations.
+
+
+!~
+    - Enable by default but 90days..no s3
+    - Trails are how you configure s3 and cwlogs
+    - Management event only be default (operation like action with ec2/s3 bucket, interact with aws services,...)
+    - Data event need to be specific configure (might be cost)
+    - IAM,STS,CloudFront => Global Services Events
+    - Not realtime - There is a delay

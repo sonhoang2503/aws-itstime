@@ -1,0 +1,21 @@
+1) General
+- Standard AWS account is not within an IAM organizations
+- Use one to create an organization => That account become the management account
+- Standard account joins to an organization its become an member account 
+- Start with Organization root (root container for the aws account )
+        - Organizational unit
+
+- Member account consolidated billing to Management account
+    - => Consolidation of reservations and volume discounts
+2) Basiss
+    - create new account in organization
+    - no need IAM user in each account => Instead can use IAM roles to allow IAM users 
+    to access other aws account
+        - eg: You can create IAM role inside a account A, Grant that with trust identity by any 
+        criteria(eg: we choose account id of an account B inside the organization), then you will add permission to that role. 
+        now u can use that account B in organization that is trusted by the account A we setup to switch role
+        to interact with service/resources of account A by any permissions was given.
+
+3) Organizational Unit (OU)
+    - An organizational unit (OU) is a logical grouping of accounts in your organization, created using AWS Organizations.
+     OUs enable you to organize your accounts into a hierarchy and make it easier for you to apply management controls.

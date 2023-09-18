@@ -1,0 +1,13 @@
+1) General
+- policy document(json) can be attach to the organization/ attach to one or more  OU(organization unit)/ or attacth to account
+- impact to the level it attach to (/attach to organization => everything in organization will inherit it/ ou/account)
+- but management account cannot be control by service-control-policy (even attach to the account direct/indirect)
+- SCP are account permissions boundaries
+- They limit what the account (including account root user) can do.
+- SCP are boundaries not grant any permissions
+
+2) Allow list vs Deny list
+- Basically you have list of statement you can add/remove to allow/deny any service resources
+
+3) Usage
+- Remove FullAWSAccess statement / add remove new policy
