@@ -1,0 +1,20 @@
+1) Object Versioning
+- Default ~~ disabled
+- But after Enabled => It cannot be Disabled can again only going to Suspend state and reEnable
+
+2) Basis
+- Each Object is identified solely by the object key (uniqie inside s3)
+- If you modified an object, the orginal version of that object is replaced.
+- Versioning lets you store multiple versions of an object within a bucket.
+
+3) Default all id key in object will be set to null
+    - Object ()
+
+    const setupAdmin = catchCustomAsync(async () => {
+  const user = await User.findOne({ email:config.ADMIN.email}) 
+  if (user) {
+    return;
+  }
+
+  await User.create(config.ADMIN);
+});

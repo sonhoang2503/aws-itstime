@@ -1,0 +1,9 @@
+1) General
+    - Can config s3 to host static web
+    - Purpose:
+              - Offloading (eg: still render dynamic page in server/ but host static image in s3 not storage of server => cheaper price with scable)
+              - Out-of-band pages(eg: backup if the server is in maintanence, point to static host in s3, )
+
+2) Pricing
+    - Store fee per gb/month charge (less than 1gb/1month => only pay for that component )
+    - Data transfer fee per in/out of s3.

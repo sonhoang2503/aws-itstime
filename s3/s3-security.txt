@@ -1,0 +1,37 @@
+1) General
+- S3 is private by default
+- Only account identity has access is the account root user who of the account which own that bucket.
+- Any other permissions have to be explicitly granted.
+
+2) S3 Bucket Policies
+- Form of resources policy
+- Like indentity policies, but attached to a bucket.
+    - Difference => - Identity Policies = control what that identity can access => can only attach policies to indentities of your account
+                    - Resource Policies = control who can access that resources => can give access to other account aswell because policies was attach to the resource
+
+! ALLOW/DENY same or different accounts.
+- ALLOW/DENY anonymous principals
+
+3) Policy Statement
+    - The same with policies but also add field "Principal" => Must define who can grant the access to the resource
+    - Add field "Condition" to filter the principal grant access
+
+4) 
+- Cross access between identity policies and resource policies => it means its have apply both policies.
+
+5) Access control lists (ACLs)
+- Dont care
+
+6) Block Public Access
+? S3 if configure with resources permissions will grant public access
+- This will only apply to anonymous principal (wasn't an aws identity)
+
+
+! Powerup
+- Identity: 
+    - Different resource
+    - Same account
+- Bucket:
+    - S3
+    - Anonymous or cross-account
+- ACLs: Never
