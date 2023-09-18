@@ -10,4 +10,4 @@
 - Basically you have list of statement you can add/remove to allow/deny any service resources
 
 3) Usage
-- Remove FullAWSAccess statement / add remove new policy
+- Remove FullAWSAccess statement / add remove new policy 

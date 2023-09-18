@@ -12,7 +12,7 @@
 
 3) Bucket
     - Belong to a region/ Never leaves unless you configure it
-    - Identify by its name/ global unique
+    - Identify by its name/ glob` al unique
     - Buckets can hold unlimited objects
     - No complex store structure => Flat structure ( all object stored within the same level)
     - With the flat structure there is no actual folder inside bucket(its just prefix)
@@ -33,3 +33,7 @@
     - Great for large scale data storage, distribution or upload.
     - Great for offload
     - Input and/or Output to many aws products. (should be default for storage)
+
+6) ARN
+    - All resources in AWS have a unique identifier = the ARN (arn:aws-${servicename}-...)
+    - ARN will atleast reference 1resource of the AWS

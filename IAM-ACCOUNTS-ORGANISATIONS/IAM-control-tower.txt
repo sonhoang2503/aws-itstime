@@ -1,3 +1,12 @@
 1) General
 - Quick and Easy setup of multi-account enviroment
 - Orchestrates other AWS services to provide this functionality
+    - 0rganizations, IAM Identify Center, CloudFormation,COnfig,...
+
+2) Landing Zone - multi-account enviroment
+    -SSO/ID Federation, Centralised Logging && Auditing
+
+3) Guard Rails - detect/mandate rules/standards across all accounts.
+4) Account Factory - automates/standardises new account creation.
+5) Dashboard - single page oversight of the entire enviroment
+

@@ -3,3 +3,5 @@
 - Store, Monitor and access logging data
 - AWS Integrations - EC2, VPC Flow Logs, Lambda, CloudTrail, R53,..more
 - Can generate metrics based on logs - metric filter
+
+2) Basis
