@@ -1,0 +1,19 @@
+1) Single PUT upload
+- Bad with single data stream to s3
+- Stream fails - Upload fails
+- require full restart if fails
+- speed & reliability 
+
+2) Mulipart Upload
+- Data chunk up
+- Min datasize 100mb for split .
+- 10000 max parts, 5mb - 5gb.
+- Last part can be smaller than 5mb.
+- Parts can fail, and be restart
+- Transfer rate = speeds of all parts
+
+3) S3 Accelerated Transfer (Off)
+- Usage of the AWS network edge locations
+- There are restrict configuration to s3 bucket (naming,..)
+- Instead of directly going into s3/ it will enter the closest best performing AWS edge locations 
+    and after that the edge location will transit the data being upload over AWS global network (usually a direct direct network)

@@ -1,0 +1,10 @@
+1) General
+- A lifecycle configuraition is a set of rules
+- Rules consist of actions
+- on a Bucket or groups of objects
+- Transition Actions
+
+!You can add rules in an S3 Lifecycle configuration to tell Amazon S3 to transition objects to another Amazon S3 storage class. 
+When you know that objects are infrequently accessed, you might transition them to the S3 Standard-IA storage class.
+You might want to archive objects that you don't need to access in real time to the S3 Glacier Flexible Retrieval storage class.
+

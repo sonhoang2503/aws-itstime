@@ -7,14 +7,25 @@
 - If you modified an object, the orginal version of that object is replaced.
 - Versioning lets you store multiple versions of an object within a bucket.
 
-3) Default all id key in object will be set to null
-    - Object ()
+3) Object by default
+    - Object also have an id, 
+        - by default WITHOUT  VERSIONING => All object id was set to null
+        - but WITH VERSIONING => S3 will allocate an id to that object
+          (eg: incase if insert an object with the same key of an existed object => 
+          it will not overwrite that object but have make a new version with different id and mark as current version)
+        - GET/ if request an object in s3 => always get the current version/ but can specify id to get an version of.
+        - DELETE/ 
+            - when you delete object without specify an version ID => s3 will create A delete marker to hidden all about 
+              the object , the deletemarker can be remove to active the object again. ( soft delete)
+            - when you delete object with specify an versionID => remove that version ID 
 
-    const setupAdmin = catchCustomAsync(async () => {
-  const user = await User.findOne({ email:config.ADMIN.email}) 
-  if (user) {
-    return;
-  }
+4) Facts    
+    - cannot be switched off - only suspended
+    - space is consumed by all versions => billed for all versions
+    - only way is to delete the bucket
+    !working with version is permanent
 
-  await User.create(config.ADMIN);
-});
+5) MFA Delete
+    - Enabled in versioning configurations
+    - MFA is required to change bucket versioning state
+    - Required to delete version

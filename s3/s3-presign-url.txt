@@ -1,0 +1,7 @@
+1)Core
+    - You can create a URL for an object you have no access to. => then of course the presign url cannot access to that object
+    - When using the URL, the permission match the identity which generated it (At the time)
+        - 2 case scenarios =>  the identity generate never had access
+                           =>  the identity does not have it now
+    - Dont generate with a role => URL stops working when temporary credentials expire ( the temporary credenitals doesnt last as long as the temporary identity)
+        ! should have use long-term identity

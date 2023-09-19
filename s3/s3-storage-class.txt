@@ -1,0 +1,56 @@
+1) S3 standard
+    -Data is replicated over 3 availability zones in the region
+    - GB/m fee, charge for transfer out/ price per requests/
+    -11 9 of durability for 10 mil objects => 1 object loss per 10000years.
+    -http/1.1 200 OK for storeing object
+    - can be publicly access
+2) S3 standard-IA
+    - just like standard but storage cost is cheaper with some compromises  
+        - per GB data retrieval fee, overall cost increases with frequent dataaccess
+        - minimum durations charge of 30days => store for less, but the minimum billing apply anyway
+        - can be publicly access
+
+    !long live / infrequent access
+
+3) S3 One Zone-IA
+    - cheaper 
+    - data only store in one az => take on additonal risk if zone is fail
+    - just like s3 standard-IA
+    - can be publicly access
+
+
+4) S3 Glacier
+    - even cheaper
+    - but more expensive retrieval,longer minimum durations 90 days (even store less will still cause the fee)
+    - can be publicly access
+
+5) S3 Glacier Flexible
+    - just like standard
+    - still cheap cost-effective
+    - but a store object in cold state(not warm/not ready to use)
+        - => required a retrieval process
+                    - Glacier Flexible is retrieved to S3 Standard-IA (3types due to time need to retrieve)
+    - first byte latency = minutes or even hours
+    - also minimum size/
+    - 90days fee duration
+    - cannot access publicly
+
+    !Yearly access => i mean no need frequent access or realtime access cus can be hours for retrieve
+
+6) S3 Glacier Deep Archive
+    - compared to Glacier Flexible
+        - data is not cold state => its frozen state
+        - longer fee day duration 180
+        - data retrieved even much longer ( firstbyte latency can be hours to days)
+    ! More like a backup not so much for retrieve
+
+7) S3 Intelligent-Tiering
+    - come up with 5tier just like from S3 standard 
+    - but now data store within this class can be monitor automatically moved to suitable tier due to the measure of the access
+        - frequent access
+        - infrequent access (30days not accessed)
+        - archive isntant access (90days)
+        - archive access (90 - 270 days)
+        - deep archive  (180 / 730 days)
+
+    !long lived data, with changing or unknown pattern

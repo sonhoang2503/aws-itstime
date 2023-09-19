@@ -1,0 +1,29 @@
+1) General
+    - 2 type replication
+        - Cross-Region Replication
+        - Same-Region Replication
+    - Replication configuration from a source bucket to a destination bucket.
+    - Configuration
+        - Logically destination bucket to use
+        - IAM role to use for replication (read object from source bucket/ replicate to destination bucket)
+
+        - If 2 buckets in the same account you just need to add permission to the role cus the bucket already trust the IAM/ => trust the IAM role
+        - But if 2 buckets in different account you need to configure the destination bucket an bucket policy to trust the role and can replicate it
+
+2) S3 Replication Options
+    - All objects or a subset ( add a filter objects by prefix or tags)
+    - Storage class - default is to maintain
+    - Ownership - default is the source account
+    - Replication Time Control(RTC)
+    - Default Versioning needs to be ON
+    - One way replication Source to Destination (non bi-directional)
+    - unencrypted, crypted
+    - only replicate object own by source bucket owner
+    - No system events, Glacier or Glacier Deep Archive
+
+
+3) !WHY 
+    - Log aggregation
+    - Rep Prod and Test Sync
+    - Resilience with strict sovereignty
+    - Global Resilience improvements
