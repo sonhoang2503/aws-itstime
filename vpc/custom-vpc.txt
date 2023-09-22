@@ -1,0 +1,15 @@
+1) General
+    - VPC is regionally isolated/resilient , operates in all AZs in the region
+    - Allowed to create isolated networks inside AWS (can have multiple networks in the same region)
+    - Nothing in/out without explicit configuration 
+    - Flexible configuration - simple or multi-tier
+    - Hybrid network - other cloud & on-premises
+    - Default or Dedicated Tenancy (Dedicated hardware for the resource => cost premimum)
+
+2) Custom VPCs
+
+    - IPv4 private CIDR blocks and public ips
+    - 1 Primary Private IPv4 CIDR Block
+        - Min /28 Max /16
+    - Optional secondary IPv4 Blocks
+    - Can be optinal assigned IPv6/ 56 CIDR Block

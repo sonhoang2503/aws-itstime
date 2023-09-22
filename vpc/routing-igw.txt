@@ -1,0 +1,4 @@
+1) General
+- Every VPC has a VPC router => Higly available
+- In every subnet = 'network +1' address
+- Routes traffic between subnets

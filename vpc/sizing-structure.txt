@@ -1,0 +1,24 @@
+1) General
+Things to consider:
+- First thing considered when creating vpc:
+        - IP range(vpc cidr): What range that vpc will use in advance
+- What size should the vpc be:
+        - Service has one/more ip => Use vpc space
+- Are there any Networks we cant use...
+- VPC's,Cloud,On-premises,Partners & Vendors (Choose range not duplicate)
+- Try to predict the future
+- VPC Structure - Tiers & Resiliency (Availability) Zones
+- Tiers are things which seperate applications components
+
+
+2) Basis
+- Vpc subnet located inside AZ => First decide how many AZ your VPC will use
+  !Choose 4 AZ inside region(3 is more like default , we add 1 for growth)
+
+- So we have vpc at least split into 4subnet
+- Start with 4 tier layer in your network
+    - Web
+    - App
+    - DB
+    - Spare
+- Each tier will have its own subnet
