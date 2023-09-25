@@ -21,4 +21,4 @@ Things to consider:
     - App
     - DB
     - Spare
-- Each tier will have its own subnet
+- Each tier will have its own subnet so we have at least 16subnets/

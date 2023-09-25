@@ -1,0 +1,8 @@
+1) Status check
+    - Per Instance Checks
+    - Represent 2 set of tests :
+        - System status check
+        - Instance status check
+
+2) Auto recovery
+    - Automatically recover to any system check issues

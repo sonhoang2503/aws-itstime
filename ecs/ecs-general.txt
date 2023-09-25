@@ -1,0 +1,19 @@
+1) General
+    - Is a service to allow you to use containers running on infrastructure, which AWS manage or partially manage.
+    (think about it like this ecs-> container like ec2 to virtual machine )
+    - ECS users/ clusters which run in one of 2 nodes
+
+2) Container definition
+    - Then it give ECS where you store you container image with all info about the single container you want to define.
+
+3) Task definition
+    - Task in ECS represent a self-contained application.(the application as a whole)
+    - A task included 1/more containers.
+    - Task store the resources used by the task (CPU,memory)
+    - Task ROLE ~~ IAM Role that a task can assume to interact with AWS resources
+    
+
+4) ECS
+    - Container definition - Image & Ports used for container
+    - Task definition - Security (Task Role), Containers(s), Resources
+    - Service - Copies, HA, restarts

@@ -27,3 +27,4 @@
     - Rep Prod and Test Sync
     - Resilience with strict sovereignty
     - Global Resilience improvements
+    - Reduce latency 

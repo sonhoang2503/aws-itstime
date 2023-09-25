@@ -2,3 +2,27 @@
 - Every VPC has a VPC router => Higly available
 - In every subnet = 'network +1' address
 - Routes traffic between subnets
+- Controlled by 'route tables' each subnet has one
+- A Vpc has a Main Route tables - subnet default
+! Each subnet has 1 route table associate with it, by default its the main route table create by the VPC/
+ if you create a route table for the subnet => it will disassociate with the vpc one
+
+ 1) Route table
+    - Just a list of routes
+        => Traffic leave the subnet when these route table associate with VPC route will review the ip packets/
+            route the ip packet match destination in route table 
+                - rules to route the more specific route = higher priority
+
+! -Route table attach to 1/more subnets
+  -Subnet needs to have a route table(default a main in vpc/a custom one for the subnet)    
+  -Route table control what happne when data leave the subnet that associate with 
+  -Local route always there 
+  -Route works by matching the destination IP for that route it direct IP to that route
+  -Route to default when nothing matches
+
+
+2) Internet Gateway(IGW)
+    - Region resilient gateway attached to a vpc
+    - only one internet gw with one vpc
+    - Runs in the aws publiczone
+    - Gateway traffic between the vpc and the internet or aws public zone

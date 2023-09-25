@@ -1,0 +1,21 @@
+1) Instance type base on categories
+
+- Mostly general,cpu/memory/gpu,storage
+
+
+2) Decoding EC2 Types
+
+- R5dn.8xlarge
+
+- R: Instance Family
+- 5: Instance Generation
+- dn: Additional Capabilities
+- 8xlarge: Instance size (nano - XL -> 10xl,..)
+
+Distinc:
+C - compute
+R - ram
+G - gpu
+P - parallel processing
+I - I/O
+D - storage

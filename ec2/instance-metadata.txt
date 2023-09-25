@@ -1,0 +1,6 @@
+1) General
+    - A service EC2 provides to instances (its the way instance or anything running inside instance can access the env info)
+    - To access metadata you need to access IP http://169.254.169.254/latest/meta-data
+    - Enviroment info
+    - Networking info
+    - Authentication
