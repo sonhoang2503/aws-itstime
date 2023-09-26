@@ -1,0 +1,20 @@
+1) General
+
+?-What is nat
+- A set of process => Remapping SRC/DST IPs
+- Ip masquerading - hiding CIDR Blocks behind one IP
+- Public IPv4 are running out
+- Give Private CIDR range outgoing internet* access
+
+2) NAT architecture
+
+- If you have ec2/ instance can attach public IP then you need to InternetGateway(IGW) to route
+  the that to the publiczone/internet
+
+- But if your ec2/instance does not have public IP/ then you need to route to the NAT Gateway => Nat Gateway will route it to the IGW
+
+- NAT Gateway needs to run in a public subnet => needs an IP address
+    - => Need a vpc with public subnet, need IGW , subnet configure to allocate IPv4 public, and default network point to the IGW
+
+- Nat use Elastic IPs (Static Ipv4 Public)
+- AZ resillient Service

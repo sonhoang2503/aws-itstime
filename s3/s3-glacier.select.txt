@@ -1,0 +1,8 @@
+1) General
+    - Only select part of the object
+
+2) Basis
+    - S3/Glacier select let you use SQL-Like statement
+        => to select part of the object, pre-filtered by S3
+        => better performe, reduce cost retrieve S3 cus data is filtered
+

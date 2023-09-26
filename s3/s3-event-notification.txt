@@ -1,0 +1,6 @@
+1) General
+    - generated when events occur in a bucket
+    - can be delivered to SNS,SQS, lambda
+    - object created
+    - object delete\
+    - object restore

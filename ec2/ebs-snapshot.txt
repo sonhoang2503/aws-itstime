@@ -1,0 +1,28 @@
+1) General
+    - Efficient way to backup data to s3
+    - Migrate data between AZ using s3 as an intermediary
+
+2) Basis
+    - Snapshots are essentialy backups of EBS volumes which is store in s3
+    => Region resillient cause store in s3
+    - The first is a full copy of 'data' on the volume
+    - Future snaps are incremental ( change since the last snapshot)
+    - Create EBS volume you can either:
+            - create a blank volume
+            - create a volume based on snapshot
+    
+    - Can use s3 to create different EBS in different AZ
+    - Can be copied to another regino also'
+
+3) EBS Snapshots/Volume performance
+
+- New EBS volume = full performance immediately
+- Snaps restore lazily - fetched gradually
+- Requested blocks are fetched immediately
+- Force a read of all data immediately
+- Fast Snapshot Restore(FSR) - Immediate restore
+- ...up to 50snaps per region. Set on the Snap & AZ
+
+
+4)  Consumption and billing 
+    - Gigabyte-month

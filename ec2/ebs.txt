@@ -1,0 +1,15 @@
+1) General  
+    - Service provide block storage - take raw physical disk for allocations (volumes) => can be read/write from
+        using a block number on that volume
+    - You can encrypt the volume using KMS
+
+    - When using ec2 instances it see block device and create file system on this device
+    - Storage is provisioned in 1 AZ ( Resillient in that AZ)
+
+    - In EBS you created then attach it to one ec2 instance/ some other service over a storage network
+    - Can attach to multi ec2 instaces/ know as cluster but need to configure so it doesnt cause data corruption 
+        with multiple device write
+    - Can also be detached and reattached to ec2 instance
+    - Snapshot(bakcup) into s3. Create volume from snapshot
+    - EBS can give different storage types, different sizes, different performance profiles
+    - Billed based on GB-month

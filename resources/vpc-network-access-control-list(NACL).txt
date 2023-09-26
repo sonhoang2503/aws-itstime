@@ -1,0 +1,18 @@
+1)
+- can be thought as an traditional firewall for vpc
+- NACLs contains rules grouped into INBOUND and OUTBOUND,
+- Inbound rules match 
+- Rules are processed in order, lowest rule number first.
+
+2) basis
+- NACLs are stateless, not aware of the same request, just care about the inbound or OUTBOUND
+    - so communication needs 1 request rule/ 1 response rule
+- VPC is created with a default NACL
+    - the default inbound/outbound rules have the implicit deny and an allow all rule
+
+3) Custom NACLS can be created for a specific VPC and are initially associated with NO subnets
+    - Only impacts data crossing subnet / but not inside the subnet
+        => config the NACLs of both those subnets to communicate with each other
+    - NACLs cannot be assigned to AWS resources - only subnets
+    - Only care about ip/cidr ports and protocols
+    - Use together with Security Group

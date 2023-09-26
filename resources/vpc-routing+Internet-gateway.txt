@@ -1,0 +1,27 @@
+1) Vpc router
+    - Every VPC has a VPC router - Highly availble
+    - Move traffic from somewhere to somewhere
+    - In every subnet = 'network+1' address
+    - Routes traffic between subnets
+    - Controlled by 'route tables' each subnet has.
+    - If no route table specific for the subnet => use the vpc route table
+    - A VPC has a main route table
+    - A route table can be attach to one/more subnets
+    - A subnet need to has a route table
+
+
+2) Internet Gateway (IGW)
+    - Region resillient gateway attached to a VPC
+    - 1 per Region, no need for each AvailabilityZone
+    - IGW can be attached to only 1 VPC at a time
+    - Runs from within the AWS public zone
+    - Gateway traffic between the VPC and the Internet or AWS pulic zone
+    ! no way ec2 instance inside vpc gets to know any ipaddress it just route the the IGW
+
+3) Bastion host/jumpbox
+
+    - Bastion Host = Jumpbox
+    - An instance in a public subnet
+    - Incoming management connections arrive there
+    - Then access internal vpc resources => essentially just an inbound management point
+    - Can configure but at its core just an entry point

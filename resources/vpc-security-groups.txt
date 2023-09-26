@@ -1,0 +1,9 @@
+1)
+- stateful - detect responst traffic automatically 
+- allowed(in or out) request = allowed response]
+- no explicit deny - only allow or implicit deny
+    - basiclly you allow * then you cannot explicitly denied an IP (or any subset of that ip range)
+    - need to use with NACLs conjunction with.
+- cannot block specific bad actors
+- including other security groups and itself
+- support ip/cidr and logical resources
