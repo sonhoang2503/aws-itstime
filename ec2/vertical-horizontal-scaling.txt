@@ -1,0 +1,18 @@
+1) Vertical
+    - Each resize requires a reboot - disruption
+    - Larger instances often carry a $ premium
+    - There is an upper cap on performance - instance size 
+    - No application modification required 
+    - Works for all applications - 
+
+2) Horizontal
+    - Add more instances 
+    - Running mulitple applications with load balancer
+    ? Sessions are everything
+        - With single app the session is store in the same app
+        - With multiple app, you will have different session due to the different app
+        - required application support/off-hot session(session host in external like a db)
+        - no disruption when scaling
+        - no real limits to scaling
+        - often less expensive - preminum
+        

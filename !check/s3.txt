@@ -1,0 +1,11 @@
+- versioning
+- object storeclass
+- optimize/performance
+- lifecycle configuratition
+- s3 replicate
+
+- hands on
+    - createbukcet
+    - host static website
+    - cross-region replication
+    - presign url

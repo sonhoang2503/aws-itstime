@@ -1,0 +1,13 @@
+1) General 
+    - Virtualization is the process of running more than 1 os in the hardware
+
+    - Hardware ... CPU,MEM,NETWORK,DEVICES,...
+    - Then its come with the OS (Kernell) ~~ Privileged mode
+    - The Kernell is the only part of the os can directly interact with hardware
+    - Os can allow applications run in user mode /non privileged and cannot directly interact with the hardware but go through OS
+            - If it tried to interact with the hardware directly => crashing the app/os
+
+2) Emulated Virtualization
+    - There is Host Operating System/Hypervisor allocated piece of hardware it needs to each of the Virtualization
+        running on their own ( believe just like an normal hard+os)
+    - These Virtualization interact with Hypervisor by Binary Transaltion (really slow ~~ half of the speed of the main os)

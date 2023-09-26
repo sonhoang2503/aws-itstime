@@ -1,0 +1,26 @@
+1) Term
+- Direct attached Storage - Storage on the EC2 Host (Instance store)
+    => super fast(host fail => shos)
+- Network attached Storage - Volumes delivered over the network (EBS)
+
+- Emphemeral Storage - Temp Storage (instance storage)
+- Persistent Storage - Permanent Storage - lives on past the lifetime of the instance (EBS)
+
+- Block storage =>  collection of blocks present either logically as volume or blank physical harddrive ()
+    - harddisk
+    - ssd
+    ! Mountable, Bootable
+- File storage => Present as a file shared has strucutre. 
+    - Mountable, Not Bootable
+
+- Object storage => Collection of objects,flat. !Scale,large read/write object.
+    - Not Mountable, Not Bootable.
+
+ 
+
+2) Storage Performance
+    - IO(block) size: Size of block of data you write to disk(16K - 1MEG)
+    - IOPS: measure the numbers of IO operation can support in a sec 
+    - Throughput
+
+    Throughput = IO size * IOPS

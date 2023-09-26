@@ -17,3 +17,4 @@
 - There are restrict configuration to s3 bucket (naming,..)
 - Instead of directly going into s3/ it will enter the closest best performing AWS edge locations 
     and after that the edge location will transit the data being upload over AWS global network (usually a direct direct network)
+    

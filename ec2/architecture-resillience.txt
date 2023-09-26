@@ -1,0 +1,20 @@
+1) General
+- EC2 instances are virtual machines(OS + resources)
+- Run in EC2 Hosts
+- Shared hosts(default ) or Dedicated Hosts()
+- Host = 1AZ - AZ fails, host fails, instances fail
+    => EC2 host run within a single AZ, AZ resilient service
+       !EC2 mentions => Focus on locate AZ detail
+
+? EC2 Host is resourced AWS create based on AZ, EC2 host (instance store, storage, data network,...) 
+  => think of it like a certain type of processor/network,cpu,memory, configuration of storage
+  EC2 Instance is config to get the resource from host
+  => istance created with different generations to ultilize specific type of host
+  ! AZ Based , eg you cannot have EC2 instance get the network data from another AZ
+
+!Good for
+- Traditional OS+Application Compute
+- Long-Running Compute
+- Server style applications
+- either burst or steady-state load
+- great for monolithic application stacks
