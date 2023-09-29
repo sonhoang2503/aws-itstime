@@ -1,0 +1,5 @@
+1) General
+    - Storage for configuration & secrets
+    - String, StringList & SecureString
+    - License codes, Database Strings, Full Configs & Passwords
+    - Hierarchies & Versioning

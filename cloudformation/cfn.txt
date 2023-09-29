@@ -1,0 +1,9 @@
+1) General
+    - Much more like an helper script
+    - Simple configuration management system
+    - Procedural(User Data) vs Desired State(cfn-init)
+    - Package, Groups, Users, Sources, Files, Commands, Services
+
+2) cfn-init ~~ UserData inside CloudFormation
+    - Get the user data inside CloudFormation => get the stack to the desired state
+    - Also can watch the change in the meta data => run the stack again

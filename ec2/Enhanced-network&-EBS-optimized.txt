@@ -1,0 +1,14 @@
+1) Enhanced networking
+    - Features required for any high-network feature such as cluster placement groups
+
+    - High I/O and lower host CPU usage
+    - More Bandwidth (better network)
+    - Higher packet per seconds (PPS)   
+    - Consistent lower latency
+
+    - Enabled by default or provided with no charge for ec2 instances types
+
+2) EBS optimized
+    - Block storage over the network
+    - Options sets on per instances
+    - Blocke 

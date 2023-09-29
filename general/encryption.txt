@@ -1,0 +1,42 @@
+1) General
+    - Ofcourse we always haves data that we want it to be secret 
+    - Data could be document, image,app
+    - To encrypt data we need an algo (Math to transform)
+    - A key ( A secret key )
+    - After encrypt  => data become cyphertext and can be sent
+    - To decrypt data just need to reverse (cypher + key + algo => to data(plaintext eg))
+
+2) Symmetric Encryption
+    - Use symetric ecryption key + symetric encryption algo
+    => encrypt plaintext(data) => ciphertext (encrypted data) secure to send data 
+
+    !but the receiver also need a key to decrypt the ciphertext data to plaintext 
+    => the problem come with that/ need to find a way to transfer the key to the receiver also
+    => good for local file encryption /  laptop dist
+    => but not good for data that need to be transfered between remote party.
+    => complex and the key need to be transfered in advance
+
+3) Asymemetric Encryption
+   - Use asymmetric encryption key + asymmetric algo to encrypt the data
+   - The asymmetric key composed of public/private key 
+   - Only the privatekey + asymmetric algo can decrypt the public key
+   - The public key of course can be public or send over with the data cus only private key can decrypt it
+   - Now we elivate the key transfered problem
+
+   => Generally used when 2/more parties are involed.
+   => PGP, SSL/TLS , SSH.
+   => Computational much more than symmetric 
+
+4) Signing
+   - So signing is the reverse of encrypt pretty much.
+   - Lets say A,B want to send data.
+   - A get B public key , use asymmentric algo and ecrypt with data => ciphertext send to B
+   - B get ciphertext , use private key/asymmentric algo to decrypt ciphertext => get the data
+   - Now B want to send to A to confirm but still in encrypt (cipher)
+   - B now send a cipher that was sign by the private key and use the publickey to verify that .
+   (no private key relvead => just public key can verify document that private key used to sign soemthing)
+
+
+5) Steganography
+   - Problem => if data is encrypted => it shows that it was encrypted ( cannot hide)
+   => Steganography method of hiding something in something else.

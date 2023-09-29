@@ -1,0 +1,12 @@
+1) Cloudwatch
+    - Service for storing/manging metric for services in  aws
+
+2) CloudWatch Logs
+    - Subset of CloudWatch aimed at storing/managing, visulasing any logging data.
+
+! Neither of those product can natively capture anydata inside an instance
+    => Need service Cloudwatch Agent
+    
+3) Cloudwatch Agent 
+    - Running inside ec2 instance/ os level to captures OS visible data
+    - Need configuration and permission to send that data to into CLoudwatch/cw-logs

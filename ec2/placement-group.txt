@@ -1,0 +1,53 @@
+1) 
+   Default ec2 instance was shared in the most sense host by aws
+
+2) Placement groups (how we arrange instance in physical hardware)
+
+    - Cluster - Pack instances close together
+    - Spreach - Keep instances seperated
+    - Partition - Groups of instances spread apart
+
+3) Cluster Placement groups
+    - Maximum performance (lauching all at the sametime)
+    - Launch in single AZ
+    - All instances within the same cluster placemnet group using the same rack/ sometimes the same host.    
+    - ALl members have directr connections to each other => Best stream performance 
+            => Using enhanced networking
+    
+    !Need performances => Same AZ,close together => risk if hardware fails all fails
+
+    ! 
+    - Cannot span AZs => Lock in one AZ only - locked when lauching the first instances
+    - Can span VPC peers but impacts performance
+    - Should use the same types of instance/ and launch at the same tim,e
+
+4) Spread Placement Groups
+
+    - Span multiple AZ
+    - Indifferent rack in different AZ => has its own networking
+    - Limit to 7 instances per Az - Isolated infras Limit
+
+    !
+    - Provide Infra Isolations
+    - each Instances runs from a different rack
+    - Each rack has its own network and power
+    - 7 instances per AZ (hard limit)
+
+    => Small number of cirtical instances that need to be kept seperated from each other
+        better avalability resillience
+
+5) Partition Placement groups
+    - Designed => more than 7 instances in AZ but still need them to be seperated
+    - Can created across AZ
+    - Divided into partitions , max 7 partition in each AZ
+    - Each has its own rack - no sharing between partitions
+
+
+    ! Huge scale than spread placement group/
+        but administrator the instances within partition
+
+    - 7 partions per AZ
+    - Instances can be placed in a specific partition or auto plcaed
+    - Great for topology aware app
+    ... HDFS,HBase, Cassandra
+

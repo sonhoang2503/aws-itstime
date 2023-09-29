@@ -1,0 +1,26 @@
+1) General
+    - Adding automation solution, scripts or other bits of configuration can be run 
+        when the instance first run
+    => Instances can be brought to service in pre-configured state
+    
+    - Outside of ec2, allow EC2 Build Automation
+    - Using User Data, Access via the meta-data IP
+    - Anything in User Data is excecuted by the instance OS
+    - Only on Launch
+    - EC2 instances doesnt interprete just run it in the OS
+
+2) User Data key points
+
+    - Its just a block of data 
+    - Its not secure(No password/long term credentials)
+    - 16kb in size
+    - Can be modified when instance stopped
+    - Only excuted once at launch
+
+3) Boot-time-to-Service-time
+    - AMI - Instances (minutes) + Post lauch time configuration
+    - AMI - Instance (minutes)=> Bootstrapping
+    - 
+
+4) Bootstrapping vs AMI
+    - More flexible than AMI (fixed images), can be changed when its at provision.
