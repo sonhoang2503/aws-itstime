@@ -40,3 +40,13 @@
 5) Steganography
    - Problem => if data is encrypted => it shows that it was encrypted ( cannot hide)
    => Steganography method of hiding something in something else.
+   => Instead of ciphertext it could be an image (using Steganography algo to encrpypt)
+
+   => One more layer of protection.
+
+6) Envelope Encryption
+   - Process of encrypt a key again with another key.  
+        => KEK (Key encryption key)
+
+   - KMS (Key management service) need permission
+        store keys

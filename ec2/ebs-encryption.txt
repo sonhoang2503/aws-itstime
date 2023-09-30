@@ -1,0 +1,8 @@
+!Powerup
+
+    - Accounts can be set to encrypt by default - default kms key
+    - Otherwise choose a KMS keys to use.
+    - Each volume use 1 unique DEK.
+    - Each snapshots & future volumes use the same DEK
+    - Cant change a volume to NOT be encrypted
+    - OS isnt aware of the encryption ...no performance loss
