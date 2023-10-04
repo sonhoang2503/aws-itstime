@@ -1,0 +1,11 @@
+1) General
+    - More like a big contact database ~~ 314 millions domains (each domains also have records)
+    - links name(domain) to ip address
+    => convert name to ip address
+
+2) Why we need lots of DNS servers instead of one global?
+    - Of course HA, risk
+    - Scalability, around the world using the dns system
+
+
+3) 

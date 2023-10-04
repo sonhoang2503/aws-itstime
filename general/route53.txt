@@ -4,7 +4,7 @@
 2) Basis
     - Register domains
     - Host Zones managed by nameservers
-    - Global service ~~ single database
+    - Global service ~~ single database (no need to pick region)
     - Globally resilient
 
 3) Register domains
