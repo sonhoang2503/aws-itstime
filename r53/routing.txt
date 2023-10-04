@@ -1,0 +1,88 @@
+1) Simple routing
+    - Support 1 records per name 
+    - eg: name : hoangnguyen.dev  - type :A -  value: [1.1.2.3,1.2.3.4,1.2.5.6] ~~ can have multiple values
+    - User queries hoangnguyen.dev => getback the value ~~ [...] => choose and use 1 of the values to go to
+
+    !simple routing doesnt support healthcheck => healthcheck is insight intelligent to route 
+
+2) Failover routing
+    - Multiple(2 ???) records of the same name
+    - eg name: hoangnguyen.dev - type:A - values : [...A]  - the primary
+               hoangnguyen.dev - type:A - values : [...B]  - the secondary
+
+      => so the primary can be the app
+            the secondary can be the backup
+
+    !key is it includes healthcheck 
+      => so if the primary is healthy => use primary 
+            if not return the secondary
+    
+    ! Backup 
+
+3) Multivalue routing
+    - Many records with the same name
+    - Like a mix of failover + simple routing
+    - After queries => DNS can send up to 8 'healthy' records! if > 8 then only random 8 be sent back
+    - CLient choose and uses 1 values
+
+    ! Many resources
+
+4) Weighted routing
+    - Use with simple form of load balancing
+    - Mutiple  records with same name 
+    - But you can specific each record with a weight? ()
+    - eg name: hoangnguyen.dev - type:A - values : [...A]  - 50(weight)
+               hoangnguyen.dev - type:A - values : [...B]  - 30
+               hoangnguyen.dev - type:A - values : [...C]  - 20
+
+    - weight ~~ the % to send base total time
+
+    - do have healthcheck/ incase a chosen record is Unhealthy => the process of selection is repeated
+        until a healthy record is chosen to return 
+
+    ! simple loadbalacing/ test new software version like add an records with only like 5% weight to test
+    => good with group of records with same name, want to control the distribution
+
+5) Latency-based routing
+    - Use when optimising for performance & user-experience
+    - Multiple records with same name
+    - But you can specify the records with region
+        - AWS maintain tables of latency between users general locations and the region tags in records
+    - So the records returns is the one which offer the lowest estimated latency & healthy
+
+6) Geolocation routing
+    - Simliar to Latency-based routing but instead the latency the locations of customer/resources
+    - When you create records => you tags the records with the location
+            - Locations are generally  countries (ISO-country code )/ continents (ISO-continents code)/
+                 default/
+    - When queries => Does an IP check verifies the locations of the user
+    - R53 check for records ?
+        - 1) In the state
+        - 2) In the country
+        - 3) In the continent
+        - 4) optionally - default record
+
+        => it returns the most specific records or NO ANSWER
+        => Can be used for regional restrictions, languages specific content or
+            load balancing accross regional endpoints
+            
+        !This routing policy is not about the closest record but return relevant only
+            !! Not about proximity but only location
+
+7) Geoproximity 
+    - Use to provide records as close to your customers as possible
+    - Calculate the distance between a customer and the record
+    - Work in distance with some features
+    - Create records with rules
+            - Define the region that resource is created in if its an aws resource or provide
+                    the latitude and longtitude coordinates
+
+            - Define an bias => Not only based on distance => bias let adjust how R53 handles the calculation
+                -
+            - eg : 
+                - Have 3 records => UK,US,AU
+                - If its an AWS resource we can define the region that resources were located in
+                - If its external ~~ nbn AWS resources => define region based on coordinates
+                => But in eithercase R53 knows the locations
+
+    - Flexible routting on distance but also can adjust with bias
