@@ -1,0 +1,42 @@
+1) Multi-AZ instance 
+    - If you choose to multi-az RDS => the primary DB instance will replicated to a stand-by DB instance
+    - Using synchronous replicas
+    - ACCESS VIA Database using Database CNAME (~~ DNS name) 
+        => Default will be  ALWAYS point to the primary database instance/ no access for the stand by atall.
+            Stand-by server is just sitting there till you have a failure secenerio with primary instance
+        => When failure happen => The standby will become the primary  => need to change the DNS cname in your
+                application to point the new Database DNS.
+    - But backup can happen at the Standby-instance (~~ might be store at S3 )
+        => No extra load on the primary
+
+  !   
+    - Synchronous replicated(~~ imediately replicate after write to primary,finish that replicate before commited)
+    - Data : Primary & Synchronous replicated to StandBy = Committed (Synchronous)
+    - Not freetier ...extra cost for replica
+    - One Standby replica only (not used for reads/writes sit there for failure event on primary)
+    - 60-120s for failover 
+    - Same region only ...different AZs in the same region
+    - Backups taken from standby to improve performance
+
+2) Multi AZ cluster
+    - Capable of 1 writer instance to replicate to 2 reader istance
+    - Only can be 2 readers
+    - Scale your reader load
+    - Replication between the writer and  the readers, while data is sent to the writer and view as
+        being commited when at least one of the readers confirm that data is written => its avalability
+        for multiple AZ within that region .
+
+    - Access : 
+        - Cluster endpoint points at the writter . Used for reads/ writes and administration
+        - Reader endpoint directs at any reads at avalible reader instance (even include the writer)
+        - Instance endpoint point at a specific instance. Generally used for testing not production
+                cus its doesn't tolerate the instance failure
+    
+  ! 
+    - 1 Writer and 2 Reader DB instances (different AZs)
+    - Run on much faster hardware, Graviton + local NVME SSD Storage
+    - Fast writes to local storage => flushed to EBS 
+    - Can scale reader for read volumes
+    - Replication via transaction logs ... more Efficient
+    - failover is faster ~35s + transaction log apply
+    - Writes are commited when 1 reader has confirmed
